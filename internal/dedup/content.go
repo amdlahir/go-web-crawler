@@ -7,7 +7,7 @@ import (
 
 	"github.com/redis/go-redis/v9"
 
-	"github.com/mhq-projects/web-crawler/internal/storage"
+	"github.com/amdlahir/go-web-crawler/internal/storage"
 )
 
 // ContentDedup handles content-level deduplication using SimHash.

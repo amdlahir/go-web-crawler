@@ -1,4 +1,4 @@
-module github.com/mhq-projects/web-crawler
+module github.com/amdlahir/go-web-crawler
 
 go 1.24.0
 

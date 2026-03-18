@@ -5,8 +5,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/mhq-projects/web-crawler/internal/config"
-	"github.com/mhq-projects/web-crawler/pkg/models"
+	"github.com/amdlahir/go-web-crawler/internal/config"
+	"github.com/amdlahir/go-web-crawler/pkg/models"
 )
 
 // Crawler defines the interface for crawling URLs.

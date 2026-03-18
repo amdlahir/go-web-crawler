@@ -7,7 +7,7 @@ import (
 
 	"github.com/bits-and-blooms/bloom/v3"
 
-	"github.com/mhq-projects/web-crawler/internal/storage"
+	"github.com/amdlahir/go-web-crawler/internal/storage"
 )
 
 // BloomFilter provides probabilistic URL deduplication.

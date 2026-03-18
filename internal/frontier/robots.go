@@ -10,9 +10,9 @@ import (
 
 	"github.com/temoto/robotstxt"
 
-	"github.com/mhq-projects/web-crawler/internal/config"
-	"github.com/mhq-projects/web-crawler/internal/storage"
-	"github.com/mhq-projects/web-crawler/pkg/models"
+	"github.com/amdlahir/go-web-crawler/internal/config"
+	"github.com/amdlahir/go-web-crawler/internal/storage"
+	"github.com/amdlahir/go-web-crawler/pkg/models"
 )
 
 // RobotsManager handles robots.txt caching and parsing.

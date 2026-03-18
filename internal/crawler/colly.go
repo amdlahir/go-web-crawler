@@ -10,10 +10,10 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"github.com/gocolly/colly/v2"
 
-	"github.com/mhq-projects/web-crawler/internal/config"
-	"github.com/mhq-projects/web-crawler/internal/dedup"
-	"github.com/mhq-projects/web-crawler/internal/parser"
-	"github.com/mhq-projects/web-crawler/pkg/models"
+	"github.com/amdlahir/go-web-crawler/internal/config"
+	"github.com/amdlahir/go-web-crawler/internal/dedup"
+	"github.com/amdlahir/go-web-crawler/internal/parser"
+	"github.com/amdlahir/go-web-crawler/pkg/models"
 )
 
 // CollyCrawler uses Colly for static page crawling.

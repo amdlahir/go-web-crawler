@@ -9,10 +9,10 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"github.com/chromedp/chromedp"
 
-	"github.com/mhq-projects/web-crawler/internal/config"
-	"github.com/mhq-projects/web-crawler/internal/dedup"
-	"github.com/mhq-projects/web-crawler/internal/parser"
-	"github.com/mhq-projects/web-crawler/pkg/models"
+	"github.com/amdlahir/go-web-crawler/internal/config"
+	"github.com/amdlahir/go-web-crawler/internal/dedup"
+	"github.com/amdlahir/go-web-crawler/internal/parser"
+	"github.com/amdlahir/go-web-crawler/pkg/models"
 )
 
 // ChromedpCrawler uses headless Chrome for JS-heavy pages.

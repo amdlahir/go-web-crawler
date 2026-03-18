@@ -11,7 +11,7 @@ import (
 	"github.com/minio/minio-go/v7"
 	"github.com/minio/minio-go/v7/pkg/credentials"
 
-	"github.com/mhq-projects/web-crawler/internal/config"
+	"github.com/amdlahir/go-web-crawler/internal/config"
 )
 
 // MinIOClient wraps the MinIO client.

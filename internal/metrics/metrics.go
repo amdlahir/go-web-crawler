@@ -9,7 +9,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"github.com/mhq-projects/web-crawler/internal/config"
+	"github.com/amdlahir/go-web-crawler/internal/config"
 )
 
 var (

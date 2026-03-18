@@ -130,7 +130,7 @@ func Load() *Config {
 			UseSSL:    getEnvBool("MINIO_USE_SSL", false),
 		},
 		Crawler: CrawlerConfig{
-			UserAgent:       getEnv("CRAWLER_USER_AGENT", "WebCrawler/1.0 (+https://github.com/mhq-projects/web-crawler)"),
+			UserAgent:       getEnv("CRAWLER_USER_AGENT", "WebCrawler/1.0 (+https://github.com/amdlahir/go-web-crawler)"),
 			Timeout:         getEnvDuration("CRAWLER_TIMEOUT", 30*time.Second),
 			MaxRetries:      getEnvInt("CRAWLER_MAX_RETRIES", 3),
 			MaxBodySize:     getEnvInt64("CRAWLER_MAX_BODY_SIZE", 10*1024*1024), // 10MB

@@ -7,7 +7,7 @@ import (
 
 	"github.com/redis/go-redis/v9"
 
-	"github.com/mhq-projects/web-crawler/internal/config"
+	"github.com/amdlahir/go-web-crawler/internal/config"
 )
 
 // RedisClient wraps the Redis client with crawler-specific operations.

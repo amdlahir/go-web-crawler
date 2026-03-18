@@ -13,8 +13,8 @@ import (
 	"github.com/opensearch-project/opensearch-go/v2"
 	"github.com/opensearch-project/opensearch-go/v2/opensearchapi"
 
-	"github.com/mhq-projects/web-crawler/internal/config"
-	"github.com/mhq-projects/web-crawler/pkg/models"
+	"github.com/amdlahir/go-web-crawler/internal/config"
+	"github.com/amdlahir/go-web-crawler/pkg/models"
 )
 
 // OpenSearchClient wraps the OpenSearch client.

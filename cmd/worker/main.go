@@ -11,13 +11,13 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/mhq-projects/web-crawler/internal/config"
-	"github.com/mhq-projects/web-crawler/internal/crawler"
-	"github.com/mhq-projects/web-crawler/internal/dedup"
-	"github.com/mhq-projects/web-crawler/internal/frontier"
-	"github.com/mhq-projects/web-crawler/internal/metrics"
-	"github.com/mhq-projects/web-crawler/internal/storage"
-	"github.com/mhq-projects/web-crawler/pkg/models"
+	"github.com/amdlahir/go-web-crawler/internal/config"
+	"github.com/amdlahir/go-web-crawler/internal/crawler"
+	"github.com/amdlahir/go-web-crawler/internal/dedup"
+	"github.com/amdlahir/go-web-crawler/internal/frontier"
+	"github.com/amdlahir/go-web-crawler/internal/metrics"
+	"github.com/amdlahir/go-web-crawler/internal/storage"
+	"github.com/amdlahir/go-web-crawler/pkg/models"
 )
 
 func main() {

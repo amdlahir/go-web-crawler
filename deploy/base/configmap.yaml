@@ -9,7 +9,7 @@ data:
   WORKER_SHUTDOWN_TIMEOUT: "30s"
 
   # Crawler settings
-  CRAWLER_USER_AGENT: "WebCrawler/1.0 (+https://github.com/mhq-projects/web-crawler)"
+  CRAWLER_USER_AGENT: "WebCrawler/1.0 (+https://github.com/amdlahir/go-web-crawler)"
   CRAWLER_TIMEOUT: "30s"
   CRAWLER_MAX_RETRIES: "3"
   CRAWLER_MAX_BODY_SIZE: "10485760"
