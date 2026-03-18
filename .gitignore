@@ -1,0 +1,40 @@
+# Reference docs
+.docs
+
+# Binaries
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test coverage
+coverage.out
+coverage.html
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+
+# Temporary files
+*.log
+*.tmp
+tmp/
+
+# Environment
+.env
+.env.local
+
+# Kubernetes secrets (don't commit real secrets)
+deploy/overlays/*/secrets.yaml

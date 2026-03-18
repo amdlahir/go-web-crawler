@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chromedp
+  namespace: crawler-system
+  labels:
+    app: chromedp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: chromedp
+  template:
+    metadata:
+      labels:
+        app: chromedp
+    spec:
+      containers:
+      - name: chromedp
+        image: chromedp/headless-shell:latest
+        ports:
+        - containerPort: 9222
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+        securityContext:
+          capabilities:
+            add:
+            - SYS_ADMIN
+        livenessProbe:
+          httpGet:
+            path: /json/version
+            port: 9222
+          initialDelaySeconds: 10
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /json/version
+            port: 9222
+          initialDelaySeconds: 5
+          periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chromedp
+  namespace: crawler-system
+spec:
+  selector:
+    app: chromedp
+  ports:
+  - port: 9222
+    targetPort: 9222

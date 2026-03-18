@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: crawler-system
+
+resources:
+  - namespace.yaml
+  - configmap.yaml
+  - redis/deployment.yaml
+  - opensearch/deployment.yaml
+  - minio/deployment.yaml
+  - chromedp/deployment.yaml
+  - scheduler/deployment.yaml
+  - seed-api/deployment.yaml
+  - worker/deployment.yaml
+
+commonLabels:
+  app.kubernetes.io/part-of: web-crawler

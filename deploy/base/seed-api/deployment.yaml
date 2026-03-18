@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seed-api
+  namespace: crawler-system
+  labels:
+    app: seed-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: seed-api
+  template:
+    metadata:
+      labels:
+        app: seed-api
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+      - name: seed-api
+        image: crawler/seed-api:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: metrics
+        - containerPort: 8082
+          name: api
+        envFrom:
+        - configMapRef:
+            name: crawler-config
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8082
+          initialDelaySeconds: 5
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8082
+          initialDelaySeconds: 3
+          periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: seed-api
+  namespace: crawler-system
+spec:
+  selector:
+    app: seed-api
+  ports:
+  - name: metrics
+    port: 8080
+    targetPort: 8080
+  - name: api
+    port: 8082
+    targetPort: 8082

@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: crawler-config
+  namespace: crawler-system
+data:
+  # Worker settings
+  WORKER_CONCURRENCY: "1"
+  WORKER_SHUTDOWN_TIMEOUT: "30s"
+
+  # Crawler settings
+  CRAWLER_USER_AGENT: "WebCrawler/1.0 (+https://github.com/mhq-projects/web-crawler)"
+  CRAWLER_TIMEOUT: "30s"
+  CRAWLER_MAX_RETRIES: "3"
+  CRAWLER_MAX_BODY_SIZE: "10485760"
+  CRAWLER_RESPECT_ROBOTS: "true"
+  CRAWLER_FOLLOW_REDIRECTS: "true"
+  CRAWLER_MAX_REDIRECTS: "10"
+  CRAWLER_MAX_DEPTH: "10"
+
+  # Frontier settings
+  FRONTIER_DEFAULT_DELAY: "1s"
+  FRONTIER_MAX_DELAY: "60s"
+  FRONTIER_BLOOM_SIZE: "10000000"
+  FRONTIER_BLOOM_HASH_COUNT: "10"
+  FRONTIER_ROBOTS_TTL: "24h"
+  FRONTIER_BATCH_SIZE: "100"
+
+  # Chromedp settings
+  CHROMEDP_TIMEOUT: "60s"
+  CHROMEDP_WAIT_TIME: "2s"
+  CHROMEDP_POOL_SIZE: "5"
+
+  # Metrics settings
+  METRICS_ENABLED: "true"
+  METRICS_PORT: "8080"
+  METRICS_PATH: "/metrics"
+
+  # Storage endpoints (internal cluster DNS)
+  REDIS_URL: "redis://redis:6379"
+  OPENSEARCH_URL: "http://opensearch:9200"
+  OPENSEARCH_INDEX: "crawled_pages"
+  MINIO_ENDPOINT: "minio:9000"
+  MINIO_BUCKET: "crawler-raw"
+  MINIO_USE_SSL: "false"
+  CHROMEDP_REMOTE_URL: "ws://chromedp:9222"

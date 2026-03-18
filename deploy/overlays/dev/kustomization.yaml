@@ -1,0 +1,41 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: crawler-system
+
+resources:
+  - ../../base
+
+# Reduce replicas for dev environment
+replicas:
+  - name: crawler-worker
+    count: 2
+  - name: chromedp
+    count: 1
+
+patches:
+  # Disable HPA in dev
+  - target:
+      kind: HorizontalPodAutoscaler
+      name: crawler-worker-hpa
+    patch: |
+      $patch: delete
+      apiVersion: autoscaling/v2
+      kind: HorizontalPodAutoscaler
+      metadata:
+        name: crawler-worker-hpa
+
+  # Reduce resource limits in dev
+  - target:
+      kind: Deployment
+      name: opensearch
+    patch: |
+      - op: replace
+        path: /spec/template/spec/containers/0/resources/requests/memory
+        value: "512Mi"
+      - op: replace
+        path: /spec/template/spec/containers/0/resources/limits/memory
+        value: "1Gi"
+      - op: replace
+        path: /spec/template/spec/containers/0/env/2/value
+        value: "-Xms256m -Xmx256m"
